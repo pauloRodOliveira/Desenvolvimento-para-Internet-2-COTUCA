@@ -10,10 +10,16 @@
         
         try{
             if (numero < 10){
+                // o "throw" vai nos jogar direto no catch
                 throw new Error("Valor Inválido! O número precisa ser > 10");
             }
         }catch (e){
             document.write("ERRO = " + e.message);
+            /* envia mensagem para um objeto
+                */
+        }
+        finally{
+            document.write("Fim das tratativas de erros");
         }
     </script>
 </head>
