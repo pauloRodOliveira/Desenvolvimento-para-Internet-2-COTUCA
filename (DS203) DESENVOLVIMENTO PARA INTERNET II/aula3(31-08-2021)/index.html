@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch Aula 2</title>
+    <script>
+        let numero = prompt("Digite um valor inteiro maior que 10");
+        
+        try{
+            if (numero < 10){
+                throw new Error("Valor Inválido! O número precisa ser > 10");
+            }
+        }catch (e){
+            document.write("ERRO = " + e.message);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
