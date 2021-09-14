@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 3</title>
+</head>
+<body>
+    <script>
+        /*Faça um programa que receba dois números inteiros, 
+        calcule e exiba: 
+        - soma dos dois números;
+        - subtração do primeiro pelo segundo; 
+        - subtração do segundo pelo primeiro; 
+        - produto dos dois números; 
+        - divisão do primeiro pelo segundo; 
+        - quociente inteiro da divisão do primeiro pelo segundo; 
+        - resto da divisão do primeiro pelo segundo.*/
+        var num1;
+        do{
+            num1 = prompt("Digite um número: ");
+            if (isNaN(num1)) alert("Número inválido");
+        }while(isNaN(num1));
+
+        var operador;
+        do{
+            operador = prompt("Digite o operador: ");
+            if (operador != "+" && operador != "-" && operador != "x" && operador != "/" && operador != "%") 
+                alert("Digite um operador válido: +, -, x, /, %");
+        }while(operador != "+" && operador != "-" && operador != "x" && operador != "/" && operador != "%");
+
+        var num2;
+        do{
+            num2 = prompt("Digite mais um número: ");
+            if (isNaN(num2)) alert("Número inválido");
+        }while(isNaN(num2));
+
+        getCalcule(num1, operador, num2);
+
+        function getCalcule(num1, operador, num2){
+            try{
+                if (operador == "+"){
+                    let op = Number(num1) + Number(num2);
+                    return document.write(`A soma de ${Number(num1)} e ${Number(num2)} é ${op}`);
+                }else if(operador == "-"){
+                    let op = Number(num1) - Number(num2);
+                    return `A subtração de ${Number(num1)} e ${Number(num2)} é ${op}`;
+                }else if(operador == "x"){
+                    let op = Number(num1) * Number(num2);
+                    return `A multiplicação de ${Number(num1)} e ${Number(num2)} é ${op}`;
+                }else if(operador == "/"){
+                    let op = Number(num1)/Number(num2);
+                    return `A divisão de ${Number(num1)} e ${Number(num2)} é ${op}`;
+                }else if(operador == "%"){
+                    let op = Number(num1)%Number(num2);
+                    return `A quociente de ${Number(num1)} e ${Number(num2)} é ${op}`;
+                }
+            }catch (e){
+                return "Digite um operador válido: +, -, x, /, %"
+            }
+        }
+
+    </script>
+</body>
+</html>
