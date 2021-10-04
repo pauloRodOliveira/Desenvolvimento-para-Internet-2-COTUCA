@@ -1,0 +1,31 @@
+<html>
+<head><title></title></head>
+<script>
+function montaPiramide() 
+{
+  contador1 = prompt("Digite a quantidade de linhas desejada = ");
+
+  while (contador1 >= 1)
+  { 
+    contador2 = 1;
+    while (contador2 <= contador1)
+    {
+      // ou faz com IF e ELSE ou com ?
+      /* 
+      if (contador1 <= 9) 
+        document.write("0" + contador1 + " ");
+      else
+        document.write(contador1 + " ");  */
+      
+      var zero = contador1 <= 9 ? "0" : "";  
+      document.write(zero + contador1 + " ");
+
+      contador2++;
+    }
+    document.write("<br>");
+    contador1--;
+  }
+}
+</script>
+<body onload="montaPiramide();"></body>
+</html>

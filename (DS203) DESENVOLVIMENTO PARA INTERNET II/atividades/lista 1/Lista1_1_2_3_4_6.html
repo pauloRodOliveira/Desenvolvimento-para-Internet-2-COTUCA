@@ -1,0 +1,120 @@
+<html>
+<head></head>
+<script>
+// declarações de funções/rotinas
+function validaCampos(f) {
+   if (f.txt_Idade.value >= 18) {
+     alert(f.txt_Nome.value + " voce é maior de idade");
+     document.write(f.txt_Nome.value + " voce é maior de idade");
+   }
+   else {
+     alert(f.txt_Nome.value + " voce é menor de idade");
+     document.write(f.txt_Nome.value + " voce é menor de idade");
+   }
+}
+
+function exercicio2() {
+    alert("*****2o Exercicio da lista*****");
+    numero1 = prompt("Digite um numero inteiro: ");
+    numero2 = prompt("Digite um numero inteiro: ");
+    alert("RESULTADO do 2o Exercicio - SOMA = " + (parseInt(numero1)+parseInt(numero2)));
+}
+
+function executaCalculo(f) {
+  //alert(f.rd_opcao.value);  
+  numero1 = f.txt_Num1.value;
+  numero2 = f.txt_Num2.value;
+  switch(f.rd_opcao.value)
+  {
+      case "SOMA": { alert("+ = " + (parseInt(numero1)+parseInt(numero2))); break; } 
+      case "SUBTRACAO1": { alert("- = " + (parseInt(numero1)-parseInt(numero2))); break; } 
+      case "SUBTRACAO2": { alert("- = " + (parseInt(numero2)-parseInt(numero1))); break; } 
+      case "PRODUTO": { alert("* = " + (parseInt(numero1)*parseInt(numero2))); break; } 
+      case "DIVISAO": { alert("/ = " + (parseInt(numero1)/parseInt(numero2))); break; } 
+      case "RESTO": { alert("% = " + (parseInt(numero1)%parseInt(numero2))); break; } 
+  }
+}
+
+function verificaCampos(f) {
+   mensagem = "";
+   if (f.txt_NOME.value.length > 20)
+     mensagem = "Campo NOME inválido! Até 20 caracteres";
+   if (f.txt_RA.value.length < 5)
+     mensagem += "\nCampo RA inválido! RA tem 5 caracteres";
+   if ((isNaN(f.txt_IDADE.value)) && (f.txt_IDADE.value.length  > 3))
+     mensagem += "\nCampo IDADE inválido! Digitar somente números e com até 2 dígitos";
+   if ((f.txt_EMAIL.value.indexOf('@') == -1) || (f.txt_EMAIL.value.indexOf('.') == -1))
+     mensagem += "\nCampo EMAIL inválido! Faltou @ ou ponto";
+   
+   alert(mensagem);
+}
+
+function exercicio6() 
+{
+   alert("*****6o Exercicio da lista*****");
+   var numero = prompt("Digite um valor inteiro maior que 10");
+   try {
+     if (numero <= 10)
+        throw new Error("Valor Inválido! O número precisa ser > 10");
+     
+     alert("NUMERO = " + numero);
+   }
+   catch(e) {
+       alert("ERRO = " + e.message);
+   }
+   finally {
+       alert("<br>Fim das tratativas de erros");
+   }
+}
+
+</script>
+<body>
+
+<center><h2><b>1o LISTA DE EXERCÍCIOS - JAVASCRIPT</b></h2></center><br>
+<h2>1o Exercício</h2>
+
+<form name="frm_Lista1Exe1" action="" method="post">
+NOME<input type="text" name="txt_Nome" size="30"><br>
+IDADE<input type="text" name="txt_Idade" size="2"><br><br>
+<input type="button" name="btn_Validacao" onclick="validaCampos(form);" value="VALIDA">
+</form>
+
+<!-- RESOLUÇÃO DO 2o EXERCÍCIO DA LISTA -->
+<script>
+exercicio2() ;
+</script>
+<hr>
+
+<h2>3o Exercício</h2>
+<form name="frm_Lista1Exe3" action="" method="post">  
+    NUMERO1<input type="text" name="txt_Num1" size="2"><br>
+    NUMERO2<input type="text" name="txt_Num2" size="2"><br><br>
+    OPÇÕES<br>
+       <input type="radio" name="rd_opcao" value="SOMA">SOMA<br>
+       <input type="radio" name="rd_opcao" value="SUBTRACAO1">SUBTRACAO 1o pelo 2o<br>
+       <input type="radio" name="rd_opcao" value="SUBTRACAO2">SUBTRACAO 2o pelo 1o<br>
+       <input type="radio" name="rd_opcao" value="PRODUTO">PRODUTO<br>
+       <input type="radio" name="rd_opcao" value="DIVISAO">DIVISAO<br>
+       <input type="radio" name="rd_opcao" value="RESTO">RESTO<br>
+    <input type="button" name="btn_Validacao" onclick="executaCalculo(form);" value="CALCULA">
+</form>
+
+<hr>
+<h2>4o Exercício</h2>
+<form name="frm_Lista1Exe4" action="" method="post">
+    RA<input type="text" name="txt_RA" size="5"><br>
+    NOME<input type="text" name="txt_NOME" size="30"><br>
+    IDADE<input type="text" name="txt_IDADE" size="2"><br>
+    EMAIL<input type="text" name="txt_EMAIL" size="20"><br>
+    <br>
+    <input type="button" name="btn_Validacao" onclick="verificaCampos(form);" value="VALIDA">
+    </form>
+<hr>
+
+<!-- RESOLUÇÃO DO 6o EXERCÍCIO DA LISTA -->
+<script>
+exercicio6();
+</script>
+
+</body>
+</html>
