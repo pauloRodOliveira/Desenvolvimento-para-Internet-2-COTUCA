@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <title>SegundaQuestão</title>
+</head>
+<body>
+    <h1>TENTE ACERTAR O NÚMERO QUE ESTOU PENSANDO</h1>
+    <h2>DICA: É DE 1 À 10</h2>
+    <p><input type="button" value="Clique aqui para começar" onclick="Comeca()"></p>
+    <script>
+        function Comeca(){
+            if(Tentativa(Number(prompt("Digite seu número: "))) == true)
+                document.write("VOCÊ ACERTOU 😁 ");
+            else document.write("VOCÊ ERROU 😢 "); 
+            
+        }
+
+        function Tentativa(ten){
+            if(ten == Sorteia()) return true;
+            else return false;
+        }
+
+        function Sorteia(){
+            sort = Math.round(Math.random() * (11 - 1) + 1);
+            return sort;
+        }
+    </script>
+</body>
+</html>

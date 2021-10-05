@@ -1,23 +1,21 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrimeiraQuestão</title>
     <script>
         function Contador(){
-            var numLinhas = prompt("Digite o número de linhas")
-            
-            for(let aux = 0; aux < Number(numLinhas); aux++){
-                for(let numElementos = 0; numElementos < aux; numElementos++){
-                    document.write(" " + numLinhas.value)
+            numLinhas = Number(prompt("Digite o número de linhas"))
+            aux = 1;
+            while(aux <= numLinhas){
+                aAux = 1;
+                while(aAux <= aux){
+                    document.write(" " + aux);
+                    aAux++;
                 }
+                document.write("<br>");
+                aux++;
             }
-            
         }
     </script>
 </head>
-<body onload="Contador()">
-</body>
+<body onload="Contador();"></body>
 </html>
