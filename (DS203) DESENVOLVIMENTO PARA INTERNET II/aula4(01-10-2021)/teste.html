@@ -6,6 +6,15 @@
             $("#div1").load("teste.txt");
         });
     });
+    
+    $("button").click(function(){
+        $("#div1").load("teste.txt", function(responseTxt, statusTxt, xhr){
+        if(statusTxt == "success")
+            alert("Conteúdo externo carregado com êxito!");
+        if(statusTxt == "error")
+            alert("Erro: " + xhr.status + ": " + xhr.statusText);
+        });
+    });
     </script>
     </head>
     <body>
